@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>AirmARk</title>
+
+  <link rel="stylesheet" type="text/css" href="honoka/css/bootstrap.css">
+  <script src="js/main.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="./">
+        AirmARk
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./">トップ<span class="sr-only">(current)</span></a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./register.html">新規登録</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html">ログイン</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="page-header" id="banner">
+    <div class="row my-4">
+      <div class="col-12">
+      <p class="lead">新規登録</p>
+      <hr>
+      </div>
+    </div>
+  </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="Password">
+          </div>
+
+
+          <button type="submit" class="btn btn-primary" onclick="user_registration();">新規登録</button>
+
+</body>
+</html>
