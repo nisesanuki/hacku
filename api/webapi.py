@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, abort, make_response, render_template, request
+from flask import Flask, jsonify, abort, make_response, render_template, request, redirect, url_for, session
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 import MySQLdb
@@ -6,6 +6,7 @@ import qrcode
 
 api = Flask(__name__)
 CORS(api)  # CORS有効化
+api.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 # ログイン API
 @api.route('/login', methods=['POST'])
@@ -25,16 +26,22 @@ def login():
 
     connection.commit()
     connection.close()
-    
-    for row in cursor:
-        print(row)
 
+    cnt = len(list(cursor.fetchall()))
 
     # ログイン可否判定
-    if cursor == ():
-        return "あはは"
+    if cnt >= 1:
+        # ログイン成功時: 通知とセッション開始
+        session[email] = email
+        return session[email]
     else:
-        return "ふぇぇ"
+        return "NO"
+
+# ログアウト API
+@api.route('/logout', methods=['POST'])
+def logout():
+    session.pop(request.form[email])
+    return redirect('http://localhost/~skomatsu')
         
 
 # ユーザ登録 API

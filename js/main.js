@@ -60,3 +60,5 @@ function user_registration()
     // 登録失敗時処理
 }
 
+
+
